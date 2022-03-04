@@ -62,7 +62,7 @@
                 progressStep.classList.remove("progress-step-check");
             }
         });
-        var forms = document.getElementById("forms");
+        let forms = document.getElementById("forms");
         forms.classList.remove("form");
         forms.innerHTML = '<div class="welcome"><div class="content"><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg><h2>Obrigado!</h2><span>Seus dados serão analisados e se aprovado, entraremos em contato!</span><div></div>';
     });
