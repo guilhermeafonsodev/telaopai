@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <?php
 include_once('fn/scripts.php');
-strip_php_extension();
 ?>
 
 <head>
