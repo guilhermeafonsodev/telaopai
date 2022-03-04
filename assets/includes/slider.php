@@ -6,7 +6,7 @@
                     <figure>
                         <img src="assets/img/slider/slide1.png" />
                     </figure>
-                    <button onclick="location.href='./guilda'" type="button" class="inscrever">
+                    <button onclick="location.href='./guilda.php'" type="button" class="inscrever">
                         <p>Conheça a guilda <i class="ri-arrow-right-line"></i></p>
                     </button>
                 </li>
