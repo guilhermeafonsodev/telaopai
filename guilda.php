@@ -27,7 +27,7 @@ strip_php_extension();
     <div class="personagem3 personagens"></div>
     <?php include('assets/includes/footer.php'); ?>
     <script type='text/Javascript'>
-        for (var i = 0; i < document.links.length; i++) {
+        for (let i = 0; i < document.links.length; i++) {
         if (document.links[i].href == document.URL) {
             document.links[i].className = 'active';
         } else {
@@ -35,7 +35,7 @@ strip_php_extension();
         }
     }
 
-    var splide = new Splide('#slide', {
+    let splide = new Splide('#slide', {
         type: 'fade',
         perPage: 1,
         rewind: true,
