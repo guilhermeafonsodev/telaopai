@@ -68,15 +68,3 @@
     });
 
 </script>
-<?php
-//==== Strip .php extension from requested URI  
-function strip_php_extension()
-{
-    $uri = $_SERVER['REQUEST_URI'];
-    $ext = substr(strrchr($uri, '.'), 1);
-    if ($ext == 'php') {
-        $url = substr($uri, 0, strrpos($uri, '.'));
-        redirect($url);
-    }
-}
-?>
