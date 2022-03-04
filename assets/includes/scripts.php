@@ -66,4 +66,37 @@
         forms.classList.remove("form");
         forms.innerHTML = '<div class="welcome"><div class="content"><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg><h2>Obrigado!</h2><span>Seus dados serão analisados e se aprovado, entraremos em contato!</span><div></div>';
     });
+
 </script>
+<?php
+//==== Strip .php extension from requested URI  
+function strip_php_extension()
+{
+    $uri = $_SERVER['REQUEST_URI'];
+    $ext = substr(strrchr($uri, '.'), 1);
+    if ($ext == 'php') {
+        $url = substr($uri, 0, strrpos($uri, '.'));
+        redirect($url);
+    }
+}
+
+//==== Redirect. Try PHP header redirect, then Java, then http redirect
+function redirect($url)
+{
+    if (!headers_sent()) {
+        /* If headers not yet sent => do php redirect */
+        header('Location: ' . $url);
+        exit;
+    } else {
+        /* If headers already sent => do javaScript redirect */
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="' . $url . '";';
+        echo '</script>';
+
+        /* If javaScript is disabled => do html redirect */
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="0; url=' . $url . '" />';
+        echo '</noscript>';
+        exit;
+    }
+}
